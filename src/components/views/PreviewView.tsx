@@ -142,7 +142,46 @@ export default function PreviewView() {
   };
 
   const handlePrint = () => {
-    window.print();
+    try {
+      // Safely clean up any previous print iframe to avoid duplicate DOM elements or active dialog crashes
+      const oldIframe = document.getElementById('pdf-print-iframe');
+      if (oldIframe) {
+        document.body.removeChild(oldIframe);
+      }
+
+      const doc = buildPDFDoc();
+      const pdfBlob = doc.output('blob');
+      const blobUrl = URL.createObjectURL(pdfBlob);
+
+      const iframe = document.createElement('iframe');
+      iframe.id = 'pdf-print-iframe';
+      iframe.style.position = 'fixed';
+      iframe.style.top = '-9999px';
+      iframe.style.left = '-9999px';
+      iframe.style.width = '0px';
+      iframe.style.height = '0px';
+      iframe.style.border = 'none';
+      iframe.src = blobUrl;
+      document.body.appendChild(iframe);
+
+      // Trigger print after a short delay because onload doesn't fire for PDF sources in modern Chrome/Edge
+      setTimeout(() => {
+        iframe.contentWindow?.focus();
+        iframe.contentWindow?.print();
+        
+        // Safe deferred cleanup after 60 seconds (prevents early removal from closing Chrome's out-of-process print dialog)
+        setTimeout(() => {
+          try {
+            if (iframe && iframe.parentNode) {
+              document.body.removeChild(iframe);
+              URL.revokeObjectURL(blobUrl);
+            }
+          } catch {}
+        }, 60000);
+      }, 300);
+    } catch {
+      showToast('Failed to initialize print engine. Please try again.', true);
+    }
   };
 
   const handleShare = async () => {
@@ -551,7 +590,7 @@ export default function PreviewView() {
       </div>
 
       {/* Print-only container (hidden on screen, visible on print) */}
-      <div className="hidden print:block print:w-full print:max-w-none print:p-0 print:m-0 bg-white text-slate-900 font-sans print-only-preview">
+      <div className="hidden print:block print:w-full print:max-w-none print:p-0 print:m-0 bg-white text-slate-900 font-sans">
         <div className={`mx-auto flex flex-col text-center duration-200 ${
           formState.template === 'elegant' 
             ? 'border-t-[10px] border-t-[#273189] flex flex-col gap-8 p-10 max-w-[720px]' 

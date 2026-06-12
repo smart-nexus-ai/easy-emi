@@ -2,6 +2,8 @@
 
 An offline-first, premium web application built to generate instant EMI payment schedule slips for retail electronics and mobile shops. Fully client-side, responsive, and crafted with high-fidelity aesthetics.
 
+**Live URL**: [https://easy-emi-mu.vercel.app/](https://easy-emi-mu.vercel.app/)
+
 ---
 
 ## Key Features 🚀

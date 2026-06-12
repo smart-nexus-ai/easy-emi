@@ -2,9 +2,45 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Easy EMI Manager',
-  description: 'Generate EMI payment schedule slips instantly for your mobile or electronics shop.',
+  metadataBase: new URL('https://easy-emi-mu.vercel.app'),
+  title: 'Easy EMI Manager - Offline EMI Payment Schedule Generator',
+  description: 'Generate high-quality printable EMI payment schedule slips instantly for your mobile or electronics shop. Works 100% offline, privacy-first, and saves local logs.',
+  keywords: [
+    'EMI Manager',
+    'EMI Slip Generator',
+    'EMI Calculator',
+    'Offline EMI App',
+    'Mobile Finance Schedule',
+    'Installment Scheduler',
+    'Shop billing helper',
+    'Bajaj TVS finance checklist'
+  ],
   manifest: '/manifest.json',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://easy-emi-mu.vercel.app/',
+    title: 'Easy EMI Manager - Offline EMI Payment Schedule Generator',
+    description: 'Generate high-quality printable EMI payment schedule slips instantly for your mobile or electronics shop. Works 100% offline, privacy-first, and saves local logs.',
+    siteName: 'Easy EMI Manager',
+    images: [
+      {
+        url: '/icon.svg',
+        width: 512,
+        height: 512,
+        alt: 'Easy EMI Manager Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Easy EMI Manager - Offline EMI Payment Schedule Generator',
+    description: 'Generate high-quality printable EMI payment schedule slips instantly for your mobile or electronics shop. Works 100% offline, privacy-first, and saves local logs.',
+    images: ['/icon.svg'],
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
