@@ -551,7 +551,7 @@ export default function PreviewView() {
       </div>
 
       {/* Print-only container (hidden on screen, visible on print) */}
-      <div className="hidden print:block print:w-full print:max-w-none print:p-0 print:m-0 bg-white text-slate-900 font-sans">
+      <div className="hidden print:block print:w-full print:max-w-none print:p-0 print:m-0 bg-white text-slate-900 font-sans print-only-preview">
         <div className={`mx-auto flex flex-col text-center duration-200 ${
           formState.template === 'elegant' 
             ? 'border-t-[10px] border-t-[#273189] flex flex-col gap-8 p-10 max-w-[720px]' 

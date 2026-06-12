@@ -370,7 +370,7 @@ export default function HomeView() {
             </div>
 
             <div className="flex flex-col justify-end">
-              <label className="px-3 py-2 border border-gray-300 dark:border-slate-700 rounded-lg flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-955/40 hover:cursor-pointer transition-colors text-xs text-slate-700 dark:text-slate-300">
+              <label className="px-3 py-2 border border-gray-300 dark:border-slate-700 rounded-lg flex items-center justify-between hover:bg-slate-50 dark:hover:bg-slate-950/40 hover:cursor-pointer transition-colors text-xs text-slate-700 dark:text-slate-300">
                 <span>Show Grand Total</span>
                 <input
                   type="checkbox"
@@ -475,7 +475,7 @@ export default function HomeView() {
               ))}
 
               {addTotal && (
-                <div className="grid grid-cols-12 px-4 py-3.5 bg-slate-50/50 dark:bg-slate-955 font-bold text-xs items-center">
+                <div className="grid grid-cols-12 px-4 py-3.5 bg-slate-50/50 dark:bg-slate-950 font-bold text-xs items-center">
                   <span className="col-span-8 text-slate-550 uppercase tracking-wide text-[10px]">Total Scheduled Repayment</span>
                   <span className="col-span-4 text-right text-blue-600 dark:text-blue-400 font-mono text-xs">
                     ₹{previewTotal.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
