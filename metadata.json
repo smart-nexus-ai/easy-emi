@@ -1,0 +1,6 @@
+{
+  "name": "Easy EMI Manager",
+  "description": "Generate EMI payment schedule slips instantly for your mobile or electronics shop.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

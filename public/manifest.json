@@ -1,0 +1,25 @@
+{
+  "name": "Easy EMI Manager",
+  "short_name": "EasyEMI",
+  "description": "Generate EMI payment schedule slips instantly for your mobile or electronics shop.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "48x48 72x72 96x96 128x128 192x192 256x256 384x384 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

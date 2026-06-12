@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Inter", "Noto Sans Bengali", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom styling for print support */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
+
+/* Base scrollbar styles for cleaner tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+/* Custom Glow Shadows for Cards */
+.shadow-purple-blue-glow {
+  box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.12), 0 8px 10px -6px rgba(59, 130, 246, 0.12);
+}
+.dark .shadow-purple-blue-glow {
+  box-shadow: 0 10px 25px -5px rgba(168, 85, 247, 0.45), 0 8px 10px -6px rgba(59, 130, 246, 0.45);
+}
+
+.shadow-blue-cyan-glow {
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.12), 0 8px 10px -6px rgba(6, 182, 212, 0.12);
+}
+.dark .shadow-blue-cyan-glow {
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.45), 0 8px 10px -6px rgba(6, 182, 212, 0.45);
+}
+
+.shadow-green-teal-glow {
+  box-shadow: 0 10px 25px -5px rgba(34, 197, 94, 0.12), 0 8px 10px -6px rgba(20, 184, 166, 0.12);
+}
+.dark .shadow-green-teal-glow {
+  box-shadow: 0 10px 25px -5px rgba(34, 197, 94, 0.45), 0 8px 10px -6px rgba(20, 184, 166, 0.45);
+}
+
+.shadow-pink-purple-glow {
+  box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.12), 0 8px 10px -6px rgba(168, 85, 247, 0.12);
+}
+.dark .shadow-pink-purple-glow {
+  box-shadow: 0 10px 25px -5px rgba(236, 72, 153, 0.45), 0 8px 10px -6px rgba(168, 85, 247, 0.45);
+}
+
+.shadow-orange-yellow-glow {
+  box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.12), 0 8px 10px -6px rgba(234, 179, 8, 0.12);
+}
+.dark .shadow-orange-yellow-glow {
+  box-shadow: 0 10px 25px -5px rgba(249, 115, 22, 0.45), 0 8px 10px -6px rgba(234, 179, 8, 0.45);
+}
+
+/* Custom Glow Shadows for Navigation Buttons */
+/* EMI Form: Blue-Cyan */
+.glow-btn-blue-cyan {
+  box-shadow: 0 4px 12px -2px rgba(59, 130, 246, 0.08), 0 2px 6px -2px rgba(6, 182, 212, 0.08);
+}
+.glow-btn-blue-cyan:hover {
+  box-shadow: 0 6px 16px -2px rgba(59, 130, 246, 0.12), 0 4px 8px -2px rgba(6, 182, 212, 0.12);
+}
+.glow-btn-blue-cyan.active {
+  box-shadow: 0 6px 18px -1px rgba(59, 130, 246, 0.18), 0 4px 10px -1px rgba(6, 182, 212, 0.18);
+}
+.dark .glow-btn-blue-cyan {
+  box-shadow: 0 4px 12px -2px rgba(59, 130, 246, 0.25), 0 2px 6px -2px rgba(6, 182, 212, 0.25);
+}
+.dark .glow-btn-blue-cyan:hover {
+  box-shadow: 0 6px 16px -2px rgba(59, 130, 246, 0.35), 0 4px 8px -2px rgba(6, 182, 212, 0.35);
+}
+.dark .glow-btn-blue-cyan.active {
+  box-shadow: 0 0 12px 2px rgba(59, 130, 246, 0.7);
+}
+
+/* Providers: Purple-Pink */
+.glow-btn-purple-pink {
+  box-shadow: 0 4px 12px -2px rgba(168, 85, 247, 0.08), 0 2px 6px -2px rgba(236, 72, 153, 0.08);
+}
+.glow-btn-purple-pink:hover {
+  box-shadow: 0 6px 16px -2px rgba(168, 85, 247, 0.12), 0 4px 8px -2px rgba(236, 72, 153, 0.12);
+}
+.glow-btn-purple-pink.active {
+  box-shadow: 0 6px 18px -1px rgba(168, 85, 247, 0.18), 0 4px 10px -1px rgba(236, 72, 153, 0.18);
+}
+.dark .glow-btn-purple-pink {
+  box-shadow: 0 4px 12px -2px rgba(168, 85, 247, 0.25), 0 2px 6px -2px rgba(236, 72, 153, 0.25);
+}
+.dark .glow-btn-purple-pink:hover {
+  box-shadow: 0 6px 16px -2px rgba(168, 85, 247, 0.35), 0 4px 8px -2px rgba(236, 72, 153, 0.35);
+}
+.dark .glow-btn-purple-pink.active {
+  box-shadow: 0 0 12px 2px rgba(192, 38, 211, 0.7);
+}
+
+/* Settings: Green-Teal */
+.glow-btn-green-teal {
+  box-shadow: 0 4px 12px -2px rgba(34, 197, 94, 0.08), 0 2px 6px -2px rgba(20, 184, 166, 0.08);
+}
+.glow-btn-green-teal:hover {
+  box-shadow: 0 6px 16px -2px rgba(34, 197, 94, 0.12), 0 4px 8px -2px rgba(20, 184, 166, 0.12);
+}
+.glow-btn-green-teal.active {
+  box-shadow: 0 6px 18px -1px rgba(34, 197, 94, 0.18), 0 4px 10px -1px rgba(20, 184, 166, 0.18);
+}
+.dark .glow-btn-green-teal {
+  box-shadow: 0 4px 12px -2px rgba(34, 197, 94, 0.25), 0 2px 6px -2px rgba(20, 184, 166, 0.25);
+}
+.dark .glow-btn-green-teal:hover {
+  box-shadow: 0 6px 16px -2px rgba(34, 197, 94, 0.35), 0 4px 8px -2px rgba(20, 184, 166, 0.35);
+}
+.dark .glow-btn-green-teal.active {
+  box-shadow: 0 0 12px 2px rgba(34, 197, 94, 0.7);
+}
+
+
