@@ -61,10 +61,10 @@ An offline-first, premium web application built to generate instant EMI payment 
 
 ## Documentation 📖
 
-Detailed design specs and architectures are outlined in the local notes:
-*   [Progress Notes](.docs/PROGRESS.md)
-*   [Technical Architecture Details](.docs/TECH.md)
-*   [Database & Storage Logic](.docs/STORAGE.md)
+Detailed design specs and architectures are outlined in the public notes:
+*   [Progress Notes](public/PROGRESS.md)
+*   [Technical Architecture Details](public/TECH.md)
+*   [Database & Storage Logic](public/STORAGE.md)
 
 ---
 
